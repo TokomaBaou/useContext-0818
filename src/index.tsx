@@ -1,12 +1,16 @@
-import React from 'react';
-// https://reactjs.org/docs/react-dom-client.html
-import * as ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+// import { StrictMode } from "react";
+import * as ReactDOMClient from "react-dom/client";
 
-const rootElement = document.getElementById('root');
-// https://blog.logrocket.com/how-to-use-typescript-with-react-18-alpha/
-if (!rootElement) throw new Error('Failed to find the root element');
-const root = ReactDOM.createRoot(rootElement);
-root.render(<App/>);
+import App from "./App";
+import { ThemeProvider } from "./ThemeContext";
+
+const rootElement = document.getElementById("root");
+const root = ReactDOMClient.createRoot(rootElement);
+
+root.render(
+ <ThemeProvider>
+  {/* <StrictMode> */}
+    <App />
+  {/* </StrictMode> */}
+ </ThemeProvider>
+);
