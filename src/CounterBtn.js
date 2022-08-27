@@ -1,4 +1,10 @@
-export const CounterBtn = () => {
+import { useCounterDispatch } from "./CounterContext"
+
+export const CounterBtn = ({calcType,step}) => {
     // const dispatch = 
-    return <button></button>
+    const dispatch = useCounterDispatch();
+    const clickHandler = () => {
+        dispatch({type:calcType,step})
+    }
+    return <button onClick={clickHandler}>{calcType}{step}</button>
 }
