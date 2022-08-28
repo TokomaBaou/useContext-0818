@@ -4,8 +4,8 @@ const CounterContext = createContext();
 const CounterDispatchContext = createContext();
 
 
-const CounterProvider = (props) => {
-    const props = {children}
+const CounterProvider = ({children}) => {
+    // const props = {children}
     
     const step = (prev,{type,step}) => {
         switch (type){

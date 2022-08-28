@@ -3,14 +3,15 @@ import * as ReactDOMClient from "react-dom/client";
 
 import App from "./App";
 import { ThemeProvider } from "./ThemeContext";
+import {CounterProvider} from './CounterContext'
 
 const rootElement = document.getElementById("root");
 const root = ReactDOMClient.createRoot(rootElement);
 
 root.render(
- <ThemeProvider>
+ <CounterProvider>
   {/* <StrictMode> */}
     <App />
   {/* </StrictMode> */}
- </ThemeProvider>
+ </CounterProvider>
 );
