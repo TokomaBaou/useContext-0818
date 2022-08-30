@@ -7,7 +7,19 @@ const CounterDispatchContext = createContext();
 const CounterProvider = ({children}) => {
     // const props = {children}
     
-    const step = (prev,{type,step}) => {
+    // const step = (prev,{type,step}) => {
+    //     switch (type){
+    //         case '+':
+    //         return prev + step;
+    //         case '-':
+    //         return prev - step;
+    //         default:
+    //         throw new Error('error')
+    //     }
+    // }
+    
+    const [state,dispatch] = useReducer((prev,{type,step})=>{
+        // const step = (prev,{type,step}) => {
         switch (type){
             case '+':
             return prev + step;
@@ -16,9 +28,9 @@ const CounterProvider = ({children}) => {
             default:
             throw new Error('error')
         }
-    }
+    // }
     
-    const [state,dispatch] = useReducer(step,0);
+    });
     
     
     return (
